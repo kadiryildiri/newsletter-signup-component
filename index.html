@@ -1,0 +1,121 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            tomato: "hsl(4, 100%, 67%)",
+                            "dark-slate-grey": "hsl(234, 29%, 20%)",
+                            "charcoal-grey": "hsl(235, 18%, 26%)",
+                            grey: "hsl(231, 7%, 60%)",
+                            white: "hsl(0, 0%, 100%)",
+                        },
+                    },
+                },
+            }
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            body {
+                font-family: "Roboto", sans-serif;
+            }
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body class="md:h-full md:bg-charcoal-grey md:flex md:items-center md:justify-center">
+        <main class="md:bg-white md:p-6 md:rounded-3xl md:flex md:items-center md:justify-center">
+            <div class="md:flex md:flex-row-reverse md:items-center" id="mobileSubs">
+                <div>
+                    <img class="md:hidden" src="images/illustration-sign-up-mobile.svg" alt="" />
+                </div>
+                <div>
+                    <img
+                        class="hidden md:flex md:h-full md:max-h-[30.25rem]"
+                        src="images/illustration-sign-up-desktop.svg"
+                        alt=""
+                    />
+                </div>
+                <div class="flex flex-col mt-10 mb-5 px-6 gap-5">
+                    <div class="flex flex-col gap-4">
+                        <h1 class="font-bold text-3xl md:text-5xl">Stay updated!</h1>
+                        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <span class="flex gap-3 items-center">
+                            <img src="images/icon-list.svg" alt="" />
+                            <p>Product discovery and building what matters</p>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                            <img src="images/icon-list.svg" alt="" />
+                            <p>Measuring to ensure updates are a success</p>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                            <img src="images/icon-list.svg" alt="" />
+                            <p>And much more!</p>
+                        </span>
+                    </div>
+                    <form class="flex flex-col gap-6" id="emailForm">
+                        <div class="flex flex-col gap-2">
+                            <div class="md:flex md:items-center md:justify-between">
+                                <label class="font-bold text-sm" for="mail">Email address</label>
+                                <span style="display: none" class="font-bold text-sm text-tomato" id="emailError"
+                                    >Valid email required</span
+                                >
+                            </div>
+                            <input
+                                class="border border-grey px-4 py-3 rounded-lg"
+                                type="email"
+                                placeholder="email@company.com"
+                                id="emailInput"
+                            />
+                        </div>
+                        <button
+                            class="bg-dark-slate-grey w-full text-white py-3 px-8 rounded-lg md:hover:bg-gradient-to-r from-pink-500 to-tomato"
+                            type="submit"
+                        >
+                            Subscribe to monthly newsletter
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="hidden md:hidden flex flex-col h-full max-h-[31.25rem] justify-between mt-24 mb-12 px-6 md:mt-0 md:mb-0 md:p-6 md:flex md:flex-col md:gap-3 md:justify-between md:w-full"
+                id="mobileSuccess"
+            >
+                <div>
+                    <div>
+                        <img src="images/icon-success.svg" alt="" />
+                    </div>
+                    <div class="flex flex-col mt-8 gap-4 md:max-w-sm">
+                        <h1 class="text-dark-slate-grey font-bold text-3xl">Thanks for subscribing!</h1>
+                        <p>
+                            A confirmation email has been sent to
+                            <span class="text-dark-slate-grey font-bold">ash@loremcompany.com</span>. Please open it and
+                            click the button inside to confirm your subscription
+                        </p>
+                    </div>
+                </div>
+                <button
+                    class="bg-dark-slate-grey w-full text-white py-3 px-8 rounded-lg md:max-w-sm md:mt-6 md:hover:bg-gradient-to-r from-pink-500 to-tomato"
+                    id="dismissBtn"
+                >
+                    Dismiss message
+                </button>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
